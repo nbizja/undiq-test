@@ -1,0 +1,6 @@
+{% extends 'base.html.twig' %}
+
+{% block container %}
+    <h1>Your message to the world:</h1>
+    <p>World, {{ paragraph|e('html') }}!</p>
+{% endblock %}

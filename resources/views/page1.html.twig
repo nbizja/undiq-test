@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block container %}
+    <h1>TestCase</h1>
+
+    <form class="form" action="page2" method="post">
+        <h2 class="form-heading">Please sign in</h2>
+        <label for="message_to_world" class="sr-only">Your message to the world</label>
+        <input type="text" id="message_to_world" name="message_to_world" class="form-control" placeholder="Enter your message..." required autofocus>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+    </form>
+{% endblock %}

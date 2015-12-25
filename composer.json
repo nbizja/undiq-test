@@ -1,0 +1,18 @@
+{
+    "name": "nejc/testcase",
+    "authors": [
+        {
+            "name": "Nejc Bizjak",
+            "email": "nejc.bizjak@zoho.com"
+        }
+    ],
+    "require": {
+        "symfony/http-foundation": "^3.0",
+        "symfony/routing": "^3.0",
+        "symfony/http-kernel": "^3.0",
+        "twig/twig": "~1.0"
+    },
+    "autoload": {
+        "psr-4": { "TestCase\\": "app/" }
+    }
+}
