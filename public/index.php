@@ -6,10 +6,10 @@ require_once __DIR__.'/../vendor/autoload.php';
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing;
 use Symfony\Component\HttpKernel;
-use TestCase\Simplex\Framework;
+use Framework\Framework;
 
 $request = Request::createFromGlobals();
-$routes = include __DIR__.'/../App/app.php';
+$routes = include __DIR__.'/../app/routes.php';
 
 $context = new Routing\RequestContext();
 $matcher = new Routing\Matcher\UrlMatcher($routes, $context);

@@ -1,6 +1,6 @@
 <?php
 
-namespace TestCase\Simplex;
+namespace Framework;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

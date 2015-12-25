@@ -13,6 +13,9 @@
         "twig/twig": "~1.0"
     },
     "autoload": {
-        "psr-4": { "TestCase\\": "app/" }
+        "psr-4": {
+            "TestCase\\": "app/",
+            "Framework\\": "framework/"
+        }
     }
 }
