@@ -14,13 +14,12 @@ testcase/
 │  ├─ Framework.php
 │  └─ Router.php
 ├─ public/
-│  └─ index.php
-│
-└─ resources/
-   ├── assets/
-   │ └─ css/
-   │    └─ ...
-   └─ views/
-      ├─ page1.html.twig
-      └─ ...
+    ├─ index.php
+    └─ resources/
+        ├─ assets/
+        │   ├─ css/
+        │   └─ ...
+        └─ views/
+            ├─ page1.html.twig
+            └─ ...
 ```
