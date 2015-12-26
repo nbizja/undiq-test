@@ -8,7 +8,10 @@ use Symfony\Component\Routing;
 use Symfony\Component\HttpKernel;
 use Framework\Framework;
 
+//Parse request
 $request = Request::createFromGlobals();
+
+//Load routes
 $routes = include __DIR__.'/../app/routes.php';
 
 $context = new Routing\RequestContext();

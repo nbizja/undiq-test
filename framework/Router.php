@@ -3,8 +3,8 @@
 namespace Framework;
 
 
-use Symfony\Component\Routing\RouteCollection;
 use Symfony\Component\Routing\Route;
+use Symfony\Component\Routing\RouteCollection;
 
 class Router
 {
@@ -41,14 +41,21 @@ class Router
     /**
      * Adds a route.
      *
-     * @param string $name  The route name
-     * @param Route  $route A Route instance
+     * @param string $name The route name
+     * @param Route $route A Route instance
      */
     public function addManually($name, Route $route)
     {
         $this->routes->add($name, $route);
     }
 
+    /**
+     * @param string $method GET,POST,PUT,PATCH,DELETE
+     * @param string $path path in url
+     * @param String|Object $controller Controller to be called if match is found for this route.
+     * @param array $routeConfig Array with config values for Route class.
+     * Keys: defaults, requirements, options, host, schemes, methods, condition, name
+     */
     public function add($method, $path, $controller, array $routeConfig = [])
     {
         $routeConfig = array_merge($this->defaultRouteConfig, $routeConfig);
@@ -60,39 +67,81 @@ class Router
         }
 
         $this->addManually(
-            $routeConfig['name'], new Route(
-            $path,
-            $routeConfig['defaults'],
-            $routeConfig['requirements'],
-            $routeConfig['options'],
-            $routeConfig['host'],
-            $routeConfig['schemes'],
-            $routeConfig['methods'],
-            $routeConfig['condition']
-        ));
+            $routeConfig['name'],
+            new Route(
+                $path,
+                $routeConfig['defaults'],
+                $routeConfig['requirements'],
+                $routeConfig['options'],
+                $routeConfig['host'],
+                $routeConfig['schemes'],
+                $routeConfig['methods'],
+                $routeConfig['condition']
+            )
+        );
 
     }
 
+    /**
+     * Register route for GET method
+     *
+     * @param string $path path in url
+     * @param string|Object $controller Controller to be called if match is found for this route.
+     * @param array $routeConfig Array with config values for Route class.
+     * Keys: defaults, requirements, options, host, schemes, methods, condition, name
+     */
     public function get($path, $controller, array $routeConfig = [])
     {
         $this->add('GET', $path, $controller, $routeConfig);
     }
 
+    /**
+     * Register route for POST method
+     *
+     * @param string $path path in url
+     * @param string|Object $controller Controller to be called if match is found for this route.
+     * @param array $routeConfig Array with config values for Route class.
+     * Keys: defaults, requirements, options, host, schemes, methods, condition, name
+     */
     public function post($path, $controller, array $routeConfig = [])
     {
         $this->add('POST', $path, $controller, $routeConfig);
     }
 
+    /**
+     * Register route for PUT method
+     *
+     * @param string $path path in url
+     * @param string|Object $controller Controller to be called if match is found for this route.
+     * @param array $routeConfig Array with config values for Route class.
+     * Keys: defaults, requirements, options, host, schemes, methods, condition, name
+     */
     public function put($path, $controller, array $routeConfig = [])
     {
         $this->add('PUT', $path, $controller, $routeConfig);
     }
 
+    /**
+     * Register route for PATCH method
+     *
+     * @param string $path path in url
+     * @param string|Object $controller Controller to be called if match is found for this route.
+     * @param array $routeConfig Array with config values for Route class.
+     * Keys: defaults, requirements, options, host, schemes, methods, condition, name
+     */
     public function patch($path, $controller, array $routeConfig = [])
     {
         $this->add('PATCH', $path, $controller, $routeConfig);
     }
 
+    /**
+     * Register route for DELETE method
+     *
+     * @param string $path path in url
+     * @param string|Object $controller Controller to be called if match is found for this route.
+     * @param array $routeConfig Array with config values for Route class.
+     * Keys: defaults, requirements, options, host, schemes, methods, condition, name
+     */
     public function delete($path, $controller, array $routeConfig = [])
     {
         $this->add('DELETE', $path, $controller, $routeConfig);

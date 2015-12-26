@@ -1,5 +1,9 @@
 {% extends 'base.html.twig' %}
 
+{% block links %}
+    <link href="/resources/assets/css/page2.css" rel="stylesheet">
+{% endblock %}
+
 {% block container %}
     <h1>Your message to the world:</h1>
     <p>World, {{ paragraph|e('html') }}!</p>

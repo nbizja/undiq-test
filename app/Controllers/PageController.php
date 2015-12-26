@@ -4,6 +4,11 @@ namespace TestCase\Controllers;
 
 use \Symfony\Component\HttpFoundation\Request;
 
+/**
+ * Class PageController
+ *
+ * @package TestCase\Controllers
+ */
 class PageController extends Controller
 {
     public function showPage1()
